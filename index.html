@@ -144,15 +144,15 @@
 
         function sendCodeToUnity() {
             const sampleCode = `
-            using UnityEngine;
+                using UnityEngine;
 
-            public class CreateCube : MonoBehaviour {
-                void Start() {
-                    GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    cube.transform.position = new Vector3(0, 0, 0);
-                    cube.GetComponent<Renderer>().material.color = Color.blue;
-                }
-            }`;
+                public class CreateCube : MonoBehaviour {
+                    void Start() {
+                        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        cube.transform.position = new Vector3(0, 0, 0);
+                        cube.GetComponent<Renderer>().material.color = Color.blue;
+                    }
+                }`;
 
             if (unityInstance) {
                 unityInstance.SendMessage("Compiler", "CompileAndExecute", sampleCode);
